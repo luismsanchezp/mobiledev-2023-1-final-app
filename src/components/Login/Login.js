@@ -62,9 +62,10 @@ export const Login = ({loginVisibility, setLoginVisibility, setWelcomeVisibility
             }
         })
         .catch((error) => {
+            console.log("MALDITO ERROR: ", error);
             if (error.toString() === 'Error: not_active') {
                 Alert.alert("Error","Usuario inactivo. Revise su bandeja de entrada para activar su cuenta.");
-                sendEmail(email);
+                //sendEmail(email);
             } else {
                 console.log("Error: ", error);
                 Alert.alert("Error","Usuario o contraseña incorrectos.");

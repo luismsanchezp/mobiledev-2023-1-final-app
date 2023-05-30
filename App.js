@@ -14,7 +14,7 @@ export default function App() {
 
     useEffect(() => {
         const checkToken = async () => {
-            // await SecureStore.deleteItemAsync("token");
+            //await SecureStore.deleteItemAsync("token");
             const token = await getToken();
             if (token !== null) {
                 console.debug("Token: ", token);

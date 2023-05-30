@@ -39,14 +39,14 @@ export async function logIn(values) {
                 //return {error: "token_invalid"};
             }
         } else if (response.error) {
-            console.log("Error: ", response);
-            if (!response.error.active) {
+            if (response.error.active === false) {
                 throw new Error("not_active");
+            } else {
+                throw new Error("Datos invalidos");
             }
-            //return response.error;
         } else {
-            console.log("Invalid credentials: ", response);
-            throw new Error("Invalid credentials.");
+            console.log("Unknown error: ", response);
+            throw new Error("Unknown error.");
             //return response.error;
         }
     })
