@@ -1,0 +1,1 @@
+export { WelcomeSlides } from './WelcomeSlides';
